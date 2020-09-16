@@ -1,42 +1,27 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
+    <div class="bungkus">
+    <div class="colFrist">
+    <nav app >
+      <v-btn to="/all">All</v-btn>
+      <v-btn to="/makanan">Makanan</v-btn>
+      <v-btn to="/minuman">Minuman</v-btn>
+    </nav>
 
     <v-main>
       <router-view></router-view>
     </v-main>
+    </div>
+      
+  <!-- side Stroke Harga list -->
+  
+  <div class="colSecond">
+    <h1>oda dong mang sholeh</h1>
+  </div>
+  </div>
+
   </v-app>
+    
 </template>
 
 <script>
@@ -54,3 +39,9 @@ export default {
   })
 };
 </script>
+<style scoped>
+  .bungkus{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+</style>

@@ -1,26 +1,14 @@
 <template>
   <div>
-    <h1>halaman Minum</h1>
-    <div v-for="n in dataMinum" :key="n.id">
-      <div v-for="a in n" :key="a.id">
-        <p>{{ a.item }} || {{ a.harga }} || {{ a.deskripsi }}</p>
-      </div>
-    </div>
+    <h1>halaman Minuman</h1>
+    <Minuman/>
   </div>
 </template>
 <script>
+import Minuman from '../components/Minuman.vue'
 export default {
-  name: "Minuman",
-  data() {
-    return {
-      minumanList: []
-    };
-  },
-  methods: {},
-  computed: {
-    dataMinum() {
-      return this.$store.getters.getDataM;
-    }
+  components:{
+    Minuman
   }
 };
 </script>
