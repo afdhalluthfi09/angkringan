@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    products: [
+    products: 
       {
         makanan: [
           {
@@ -80,9 +80,9 @@ export default new Vuex.Store({
             harga: 7500,
             deskripsi: "pisang goreng 7X"
           }
-        ]
-      },
-      {
+        ],
+      
+      
         minuman: [
           {
             id: 310,
@@ -198,20 +198,59 @@ export default new Vuex.Store({
             harga: 9000,
             deskripsi: "jus pisang raja wakanda"
           }
-        ]
-      }
-    ]
+        ]    
+       },
+     card:[]  
   },
-
   getters: {
     getData: state => {
-      return state.products[0];
+      return state.products.makanan;
     },
     getDataM: state => {
-      return state.products[1];
+      return state.products.minuman;
+    },
+    card:state=>{
+      return state.card
     }
   },
-  mutations: {},
-  actions: {},
-  modules: {}
+  actions:{
+    addItemToCard({commit},item){
+      commit('addItem',item)
+    },
+    addList({commit},id){
+      commit('addListM',id)
+    },
+    reduceList({commit},id){
+      commit('reduceListM',id)
+    },
+    removeList({commit},id){
+      commit('removeListM',id)
+    }
+  },
+  mutations:{
+    addItem(state,item){
+      const addItems =state.card.find( (product) => product.id === item.id);
+      if(addItems){
+        addItems.qty++;
+      }else{
+        this.state.card.push({...item, qty: 1 })
+      }
+    },
+    addListM(state,id){
+      let list = state.card.find( (product) => product.id === id);
+      list.qty++
+    },
+    reduceListM(state,id){
+      let list = state.card.find((product)=>product.id === id);
+      if(list.qty > 1){
+        list.qty--
+      }else{
+        state.card = state.card.filter((product) => product.id !== id)
+      }
+    },
+    removeListM(state,id){
+       state.card = state.card.filter((product) => product.id !== id)
+    }
+
+  }
 });

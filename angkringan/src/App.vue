@@ -17,6 +17,7 @@
   
   <div class="colSecond">
     <h1>oda dong mang sholeh</h1>
+    <listMakanan/>
   </div>
   </div>
 
@@ -25,13 +26,13 @@
 </template>
 
 <script>
-// import HelloWorld from "./components/HelloWorld";
+import listMakanan from "./components/listMakanan";
 
 export default {
   name: "App",
 
   components: {
-    // HelloWorld
+    listMakanan
   },
 
   data: () => ({
