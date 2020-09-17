@@ -1,18 +1,21 @@
 <template>
-  <div>
-      <p>ini componen All</p>
+  <div class="flex">
       <h5>Makanan</h5>
       <div v-for="n in dataMI" :key="n.id" >
-        <div v-for="a in n" :key="a.id">
-          {{a.item}} || {{a.harga}} || {{a.deskripsi}}
-        </div>
+        <v-card>
+          <v-card-title>{{n.item}}</v-card-title>
+          <v-card-subtitle>{{n.harga}}</v-card-subtitle>
+          <v-card-text>{{n.text}}</v-card-text>
+        </v-card>
       </div>
       <br>
       <h5>Minuman</h5>
       <div v-for="n in dataM" :key="n.id" >
-        <div v-for="a in n" :key="a.id">
-          {{a.item}} || {{a.harga}} || {{a.deskripsi}}
-        </div>
+        <v-card>
+          <v-card-title>{{n.item}}</v-card-title>
+          <v-card-subtitle>{{n.harga}}</v-card-subtitle>
+          <v-card-text>{{n.text}}</v-card-text>
+        </v-card>
       </div>
   </div>
 </template>
@@ -31,5 +34,7 @@ export default {
 </script>
 
 <style>
-
+    .flex{
+      display: flex;
+    }
 </style>

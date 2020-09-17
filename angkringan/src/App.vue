@@ -3,9 +3,9 @@
     <div class="bungkus">
     <div class="colFrist">
     <nav app >
-      <v-btn to="/all">All</v-btn>
-      <v-btn to="/makanan">Makanan</v-btn>
-      <v-btn to="/minuman">Minuman</v-btn>
+      <router-link to="/all">All</router-link>
+      <router-link to="/makanan">Makanan</router-link>
+      <router-link to="/minuman">Minuman</router-link>
     </nav>
 
     <v-main>

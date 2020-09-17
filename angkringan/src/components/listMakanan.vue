@@ -10,13 +10,13 @@
           <v-btn icon @click="removeList(item.id)" ><v-icon>mdi-trash-can</v-icon></v-btn>
       </v-card>
      </div>
-     <span>harga total :{{count}}  ||  </span>
      <span>jumlah pesanan:{{jumlah}}</span>
-
+    <ModalPesan/>
   </div>
 </template>
 
 <script>
+import ModalPesan from './ModalPesan.vue'
 import {mapGetters, mapActions} from 'vuex'
 export default {
     computed:{
@@ -30,6 +30,9 @@ export default {
     },
     methods:{
         ...mapActions(["addList","reduceList","removeList"])
+    },
+    components:{
+        ModalPesan
     }
 }
 </script>
